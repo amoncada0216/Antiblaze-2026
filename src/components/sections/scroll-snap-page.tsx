@@ -6,7 +6,10 @@ import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { SiteHeader } from "@/components/layout/site-header";
 import { navLinks } from "@/lib/constants";
 
+import { ApplicationsSection } from "./applications-section";
+import { ContactSection } from "./contact-section";
 import { EmptySection } from "./empty-section";
+import { FAQSection } from "./faq-section";
 import { HomeHeroSection } from "./home-hero-section";
 import { SolutionSection } from "./solution-section";
 
@@ -16,28 +19,10 @@ export function ScrollSnapPage() {
   const [activeHref, setActiveHref] = useState<string>(navLinks[0].href);
   const placeholderSections = [
     {
-      href: "#applications",
-      id: "applications",
-      title: t("applications"),
-      tone: "product" as const,
-    },
-    {
       href: "#about",
       id: "about",
       title: t("about"),
       tone: "about" as const,
-    },
-    {
-      href: "#faq",
-      id: "faq",
-      title: t("faq"),
-      tone: "product" as const,
-    },
-    {
-      href: "#contact",
-      id: "contact",
-      title: t("contact"),
-      tone: "contact" as const,
     },
   ];
 
@@ -123,15 +108,18 @@ export function ScrollSnapPage() {
       >
         <HomeHeroSection onNavigate={handleNavigate} />
         <SolutionSection onNavigate={handleNavigate} />
-        {placeholderSections.map((section, index) => (
+        <ApplicationsSection onNavigate={handleNavigate} />
+        {placeholderSections.map((section) => (
           <EmptySection
             key={section.href}
             id={section.id}
-            isLast={index === placeholderSections.length - 1}
+            isLast={false}
             title={section.title}
             tone={section.tone}
           />
         ))}
+        <FAQSection onNavigate={handleNavigate} />
+        <ContactSection />
       </main>
     </>
   );

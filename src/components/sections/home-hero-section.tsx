@@ -224,7 +224,7 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
                   transition: contentTransition,
                 },
               }}
-              className="mt-7 max-w-[56rem] text-balance text-[3.1rem] font-semibold leading-[0.96] tracking-[-0.068em] text-primary-foreground drop-shadow-[0_18px_42px_rgba(7,11,28,0.34)] sm:mt-8 sm:text-[3.85rem] md:text-[4.5rem] lg:text-[5.55rem] 2xl:max-w-[60rem]"
+              className="mt-7 max-w-[60rem] text-balance text-[3.55rem] font-semibold leading-[0.96] tracking-[-0.04em] text-primary-foreground drop-shadow-[0_18px_42px_rgba(7,11,28,0.34)] sm:mt-8 sm:text-[4.4rem] md:text-[5.15rem] lg:text-[6.35rem] 2xl:max-w-[66rem]"
             >
               <Image
                 src={withBasePath("/antiblaze.svg")}
@@ -246,7 +246,7 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
                   transition: contentTransition,
                 },
               }}
-              className="mt-10 max-w-[28.5rem] text-[0.98rem] leading-[1.95] text-primary-foreground/88 sm:mt-11 sm:text-base xl:text-[1.05rem]"
+              className="mt-10 max-w-[34.2rem] whitespace-pre-line text-[0.98rem] leading-[1.95] text-primary-foreground/88 sm:mt-11 sm:text-base xl:text-[1.05rem]"
             >
               {t.rich("description", {
                 brand: (chunks) => (

@@ -8,9 +8,9 @@ const sectionThemes = {
   about:
     "bg-[linear-gradient(180deg,var(--section-2-start)_0%,var(--section-2-end)_100%)] text-foreground",
   product:
-    "bg-[linear-gradient(180deg,var(--section-3-start)_0%,var(--section-3-end)_100%)] text-foreground",
+    "bg-[linear-gradient(180deg,var(--section-2-start)_0%,var(--section-2-end)_100%)] text-foreground",
   contact:
-    "bg-[linear-gradient(180deg,var(--section-4-start)_0%,var(--section-4-end)_100%)] text-primary-foreground",
+    "bg-[linear-gradient(180deg,var(--section-2-start)_0%,var(--section-2-end)_100%)] text-foreground",
 } as const;
 
 type SnapSectionTone = keyof typeof sectionThemes;

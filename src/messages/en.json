@@ -65,7 +65,7 @@
         "title": "Efficient Thermal Control for Industrial Roof Systems",
         "problemLine1": "Roof systems absorb solar heat and push it indoors.",
         "problemLine2": "That raises interior temperatures and affects people, operations and energy costs.",
-        "problem": "Roof systems absorb solar heat and transfer it indoors. That raises interior temperatures and affects operations, people and energy costs.",
+        "problem": "Roof systems absorb solar heat and transfer it indoors. That raises temperature and affects operations, people and energy costs.",
         "installation": {
           "label": "Installed under",
           "value": "Metal, fiber cement, concrete and other roof types"
@@ -74,37 +74,54 @@
           "label": "Used in",
           "value": "Industrial, commercial and residential projects"
         },
-        "product": "Antiblaze® is a reflective under-roof insulation installed beneath the roof to block radiant heat before it enters the space.",
+        "product": "Antiblaze® is a reflective insulation installed beneath the roof that blocks radiant heat before it enters the space.",
         "howItWorks": "It limits radiant heat before it enters the space, while also supporting moisture, vapor and acoustic control.",
         "benefitsEyebrow": "Why it performs",
         "benefit1": {
-          "title": "Lower Interior Heat",
-          "description": "Reduces thermal gain."
+          "title": "Lower interior heat load",
+          "description": "Reduces heat transfer from the roof and helps maintain a more stable indoor temperature."
         },
         "benefit2": {
-          "title": "Operational Protection",
-          "description": "Protects equipment and personnel."
+          "title": "Cooling savings",
+          "description": "Reduces demand on air conditioning and ventilation, helping lower operating energy costs."
         },
         "benefit3": {
-          "title": "Moisture Control",
-          "description": "Reduces condensation."
+          "title": "Moisture and condensation control",
+          "description": "Helps limit condensation points under the roof and improves system behavior in demanding environments."
         },
         "benefit4": {
-          "title": "Lightweight and Durable",
-          "description": "Long-term high performance."
+          "title": "Better operational continuity",
+          "description": "Supports more controlled conditions for people, equipment, inventory and heat-sensitive processes."
         },
         "support": "Antiblaze® combines thermal performance, fire resistance and durability in one practical under-roof solution.",
-        "ctaSupport": "Assess the thermal impact on your project",
+        "ctaSupport": "ASSESS THE THERMAL IMPACT ON YOUR PROJECT",
         "ctaMicrocopy": "Quick guidance for the right system and application.",
-        "ctaLabel": "Request a Quote",
-        "comparisonEyebrow": "Thermal comparison",
-        "comparisonTitle": "With and Without Antiblaze®",
+        "ctaLabel": "REQUEST A QUOTE",
+        "comparisonEyebrow": "REAL COMPARISON",
+        "comparisonTitle": "Before and after installation",
+        "comparisonHelper": "Drag to compare a roof without the installation and a roof with Antiblaze®.",
         "comparisonDescription": "",
         "diagramStatus": "Image pending",
-        "comparisonWithoutLabel": "Without Antiblaze®",
+        "comparisonWithoutLabel": "WITHOUT ANTIBLAZE®",
         "comparisonWithoutText": "High heat gain",
-        "comparisonWithLabel": "With Antiblaze®",
-        "comparisonWithText": "Blocks radiant heat",
+        "comparisonWithLabel": "WITH ANTIBLAZE®",
+        "comparisonWithText": "Radiant heat blocked",
+        "comparisonAriaLabel": "Before and after comparison slider",
+        "comparisonKeyboardHint": "Use the left and right arrow keys to move the comparison.",
+        "comparisonBeforeAlt": "Roof without reflective installation showing higher solar heat transfer into the interior.",
+        "comparisonAfterAlt": "Roof with Antiblaze® installed showing lower radiant heat transfer into the interior.",
+        "technical1": {
+          "title": "Lower thermal transfer",
+          "description": "Reduces the passage of heat from the roof into the interior."
+        },
+        "technical2": {
+          "title": "More efficient and sustainable solution",
+          "description": "Contributes to lower energy consumption and a more responsible operation."
+        },
+        "technical3": {
+          "title": "Lightweight, safe and durable",
+          "description": "Installs beneath the roof without adding significant load and maintains long-term performance."
+        },
         "diagramPlaceholder": "Diagram placeholder",
         "heatBarrier": {
           "title": "Heat barrier",
@@ -130,8 +147,42 @@
       },
       "section4": {
         "eyebrow": "Contact",
-        "title": "Next Step",
-        "description": "Final section using the same snap layout and observer-based section tracking."
+        "title": "Send us a message",
+        "description": "Tell us about your project and we will help you define the right solution for your roof system.",
+        "mailSubject": "Antiblaze inquiry",
+        "submit": "Send message",
+        "submitHelper": "Submitting opens your email client with the message ready to send.",
+        "contactInfoEyebrow": "Contact details",
+        "contactInfoTitle": "Direct channels for support and sales",
+        "contactInfoDescription": "Duracol is the exclusive importer and representative for Colombia. You can also reach us by WhatsApp or email for support, sales and quotations.",
+        "responseTitle": "Commercial response",
+        "responseText": "Share the main details of your project and we will respond through the most appropriate channel.",
+        "form": {
+          "name": "Name",
+          "namePlaceholder": "Your name",
+          "company": "Company",
+          "companyPlaceholder": "Your company name",
+          "email": "Email",
+          "emailPlaceholder": "you@company.com",
+          "phone": "Phone",
+          "phonePlaceholder": "Your contact number",
+          "message": "Message",
+          "messagePlaceholder": "Tell us about your project, roof type or current need."
+        },
+        "contactItems": {
+          "exclusiveRep": {
+            "label": "Duracol",
+            "value": "Exclusive Importer and Representative for Colombia"
+          },
+          "whatsapp": {
+            "label": "WhatsApp",
+            "value": "310 560 9958"
+          },
+          "email": {
+            "label": "Support and Sales",
+            "value": "info@antiblaze.com.co"
+          }
+        }
       }
     }
   }

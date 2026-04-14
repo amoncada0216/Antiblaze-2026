@@ -1,10 +1,10 @@
 {
   "Metadata": {
     "title": "Antiblaze | Proteccion cortafuego",
-    "description": "Prototipo en espanol para la nueva web de Antiblaze, con scroll snap, navbar fija y secciones a pantalla completa."
+    "description": "Prototipo en español para la nueva web de Antiblaze, con scroll snap, navbar fija y secciones a pantalla completa."
   },
   "LocaleSwitcher": {
-    "label": "Cambiar idioma",
+      "label": "Cambiar idioma",
     "options": {
       "es": "ES",
       "en": "EN"
@@ -16,40 +16,40 @@
   },
   "ScrollSnap": {
     "nav": {
-      "label": "Navegacion de secciones",
+      "label": "Navegación de secciones",
       "brandAlt": "Logotipo de Antiblaze",
-      "eyebrow": "Evolucion de Duralfoil",
+      "eyebrow": "Evolución de Duralfoil",
       "home": "Inicio",
-      "solution": "Soluci\u00f3n",
+      "solution": "Solución",
       "applications": "Aplicaciones",
       "about": "Nosotros",
       "faq": "FAQ",
       "contact": "Contacto",
-      "quoteCta": "Solicitar cotizacion"
+      "quoteCta": "Solicitar cotización"
     },
     "sections": {
       "section1": {
-        "eyebrow": "Proteccion cortafuego",
+        "eyebrow": "Protección cortafuego",
         "titleLogoAlt": "Logotipo de Antiblaze",
-        "title": "La nueva generación de protección para cubiertas.",
-        "description": "La evolución de <brand>Duralfoil®</brand> en una solución más moderna, más segura y mejor preparada para enfrentar las exigencias reales de la industria.",
-        "primaryCta": "Solicitar cotizacion",
-        "secondaryCta": "C\u00f3mo funciona",
-        "credibilityLine": "Soluci\u00f3n probada en entornos industriales y comerciales exigentes",
+        "title": "La nueva generación en protección térmica",
+        "description": "<brand>Antiblaze®</brand> es la evolución del aislante térmico Duralfoil®, más moderna, más segura y desarrollada para cumplir con los estándares actuales de eficiencia energética, seguridad y cumplimiento normativo en aplicaciones industriales y comerciales.\n\nBloquea el calor radiante antes de que ingrese al espacio, logrando mayor eficiencia térmica y mejor desempeño operativo.",
+        "primaryCta": "Solicitar cotización",
+        "secondaryCta": "Cómo funciona",
+        "credibilityLine": "Solución probada en entornos industriales y comerciales exigentes",
         "stats": {
           "stat1": {
-            "label": "A\u00f1os en cubiertas industriales",
+            "label": "Años protegiendo la industria colombiana",
             "value": "29+",
             "description": ""
           },
           "stat2": {
-            "label": "Proyectos protegidos",
+            "label": "Clientes en Colombia, Ecuador, Panama y Venezuela",
             "value": "2.500+",
             "description": ""
           },
           "stat3": {
-            "label": "Ciudades operadas",
-            "value": "12+",
+            "label": "Ciudades atendidas",
+            "value": "120+",
             "description": ""
           },
           "stat4": {
@@ -62,7 +62,7 @@
       "section2": {
         "eyebrow": "Solución",
         "sectionTag": "Sistema reflectivo bajo cubierta",
-        "title": "Control térmico eficiente para cubiertas industriales",
+        "title": "Control térmico de alto desempeño",
         "problemLine1": "Las cubiertas absorben calor solar y lo llevan al interior.",
         "problemLine2": "Eso eleva la temperatura y afecta a las personas, la operación, el producto y la energía.",
         "problem": "Las cubiertas absorben calor solar y lo transfieren al interior. Esto eleva la temperatura y afecta operación, personas y costos energéticos.",
@@ -76,35 +76,52 @@
         },
         "product": "Antiblaze® es un aislante reflectivo instalado bajo cubierta que bloquea el calor radiante antes de que entre al espacio.",
         "howItWorks": "Reduce la transferencia de calor por radiación antes de que entre al espacio y además aporta control de humedad, vapor y apoyo acústico.",
-        "benefitsEyebrow": "¿Por qué funciona?",
+        "benefitsEyebrow": "Por qué funciona",
         "benefit1": {
-          "title": "Menor temperatura interior",
-          "description": "Reduce ganancia térmica."
+          "title": "Menor carga térmica interior",
+          "description": "Reduce la transferencia de calor desde la cubierta y ayuda a mantener una temperatura interior más estable."
         },
         "benefit2": {
-          "title": "Protección operativa",
-          "description": "Protege equipos y personal."
+          "title": "Ahorro en climatización",
+          "description": "Disminuye la demanda sobre aire acondicionado y ventilación, ayudando a reducir costos de operación energética."
         },
         "benefit3": {
-          "title": "Control de humedad",
-          "description": "Reduce condensación."
+          "title": "Control de humedad y condensación",
+          "description": "Ayuda a limitar puntos de condensación bajo cubierta y mejora el comportamiento del sistema en ambientes exigentes."
         },
         "benefit4": {
-          "title": "Liviana y durable",
-          "description": "Alto desempeño a largo plazo."
+          "title": "Mejor continuidad operativa",
+          "description": "Favorece condiciones más controladas para personal, equipos, inventario y procesos sensibles al calor."
         },
         "support": "Antiblaze® reúne desempeño térmico, resistencia al fuego y durabilidad en una solución práctica bajo cubierta.",
-        "ctaSupport": "Evalúa el impacto térmico en tu proyecto",
+        "ctaSupport": "EVALÚA EL IMPACTO TÉRMICO EN TU PROYECTO",
         "ctaMicrocopy": "Acompañamiento rápido para definir la solución adecuada.",
-        "ctaLabel": "Solicitar cotización",
-        "comparisonEyebrow": "Comparación térmica",
-        "comparisonTitle": "Con y sin Antiblaze®",
+        "ctaLabel": "SOLICITAR COTIZACIÓN",
+        "comparisonEyebrow": "COMPARACIÓN REAL",
+        "comparisonTitle": "Antes y después de la instalación",
+        "comparisonHelper": "Desliza para comparar una cubierta sin instalación y una cubierta con Antiblaze®.",
         "comparisonDescription": "",
         "diagramStatus": "Imagen pendiente",
-        "comparisonWithoutLabel": "Sin Antiblaze®",
+        "comparisonWithoutLabel": "SIN ANTIBLAZE®",
         "comparisonWithoutText": "Alta ganancia térmica",
-        "comparisonWithLabel": "Con Antiblaze®",
+        "comparisonWithLabel": "CON ANTIBLAZE®",
         "comparisonWithText": "Bloqueo de calor radiante",
+        "comparisonAriaLabel": "Control deslizante de comparación antes y después",
+        "comparisonKeyboardHint": "Usa las teclas izquierda y derecha para mover la comparación.",
+        "comparisonBeforeAlt": "Cubierta sin instalación reflectiva con mayor transferencia de calor solar al interior.",
+        "comparisonAfterAlt": "Cubierta con Antiblaze® instalado y menor transferencia de calor radiante al interior.",
+        "technical1": {
+          "title": "Menor transferencia térmica",
+          "description": "Reduce el paso del calor desde la cubierta hacia el interior."
+        },
+        "technical2": {
+          "title": "Solución más eficiente y sostenible",
+          "description": "Contribuye a un menor consumo energético y a una operación más responsable con el entorno."
+        },
+        "technical3": {
+          "title": "Liviana, segura y durable",
+          "description": "Se instala bajo cubierta sin agregar carga significativa y mantiene su desempeño a largo plazo."
+        },
         "diagramPlaceholder": "Espacio para diagrama",
         "heatBarrier": {
           "title": "Barrera térmica",
@@ -130,8 +147,42 @@
       },
       "section4": {
         "eyebrow": "Contacto",
-        "title": "Solicita una cotizacion",
-        "description": "Espacio listo para cerrar la narrativa y llevar al usuario al siguiente paso comercial con claridad."
+        "title": "Envíanos un mensaje",
+        "description": "Cuéntanos sobre tu proyecto y te ayudaremos a definir la solución adecuada para tu cubierta.",
+        "mailSubject": "Consulta Antiblaze",
+        "submit": "Enviar mensaje",
+        "submitHelper": "Al enviar, se abrirá tu cliente de correo con el mensaje listo para salir.",
+        "contactInfoEyebrow": "Información de contacto",
+        "contactInfoTitle": "Canales directos para soporte y ventas",
+        "contactInfoDescription": "Duracol es el importador y representante exclusivo para Colombia de Antiblaze®. También puedes escribirnos por Whatsapp o correo para soporte, ventas y cotizaciones.",
+        "responseTitle": "Atención comercial",
+        "responseText": "Compártenos los datos principales de tu proyecto y te responderemos por el canal más adecuado.",
+        "form": {
+          "name": "Nombre",
+          "namePlaceholder": "Tu nombre",
+          "company": "Empresa",
+          "companyPlaceholder": "Nombre de tu empresa",
+          "email": "Correo",
+          "emailPlaceholder": "tu@empresa.com",
+          "phone": "Teléfono",
+          "phonePlaceholder": "Tu número de contacto",
+          "message": "Mensaje",
+          "messagePlaceholder": "Cuéntanos sobre tu proyecto, tipo de cubierta o necesidad actual."
+        },
+        "contactItems": {
+          "exclusiveRep": {
+            "label": "Duracol",
+            "value": "Importador y Representante Exclusivo para Colombia"
+          },
+          "whatsapp": {
+            "label": "Whatsapp",
+            "value": "310 560 9958"
+          },
+          "email": {
+            "label": "Soporte y Ventas",
+            "value": "info@antiblaze.com.co"
+          }
+        }
       }
     }
   }
