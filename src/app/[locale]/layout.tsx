@@ -6,7 +6,6 @@ import { notFound } from "next/navigation";
 
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/lib/constants";
-import { ClientProviders } from "@/providers/client-providers";
 import "@/styles/globals.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -45,6 +44,11 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     applicationName: siteConfig.name,
+    icons: {
+      icon: `${basePath}/fav-icon.png`,
+      shortcut: `${basePath}/fav-icon.png`,
+      apple: `${basePath}/fav-icon.png`,
+    },
     alternates: {
       canonical: canonicalPath,
       languages: {
@@ -70,15 +74,9 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html
-      lang={locale}
-      suppressHydrationWarning
-      className={`${manrope.variable} ${ibmPlexMono.variable}`}
-    >
+    <html lang={locale} className={`${manrope.variable} ${ibmPlexMono.variable}`}>
       <body>
-        <NextIntlClientProvider messages={messages}>
-          <ClientProviders>{children}</ClientProviders>
-        </NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

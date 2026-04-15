@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
   --primary: #080b7a;
   --primary-strong: #05085f;
@@ -36,40 +34,6 @@
   --shadow-soft: 0 20px 45px -30px rgb(8 11 122 / 24%);
   --shadow-panel: 0 35px 80px -42px rgb(8 11 122 / 34%);
   --section-space: clamp(4.5rem, 8vw, 7.5rem);
-}
-
-.dark {
-  --primary: #080b7a;
-  --primary-strong: #1624c2;
-  --primary-soft: #192657;
-  --primary-muted: #95a3ff;
-  --primary-foreground: #f6f8ff;
-  --accent: #4b63ff;
-  --accent-foreground: #f6f8ff;
-  --background: #070b1c;
-  --background-elevated: #0c1332;
-  --foreground: #edf2ff;
-  --foreground-soft: #cbd4ff;
-  --surface: rgb(12 19 50 / 84%);
-  --surface-strong: #131c46;
-  --surface-quiet: #0f173b;
-  --muted: #0f1736;
-  --muted-foreground: #9ca8d6;
-  --border: rgb(139 154 255 / 18%);
-  --border-strong: rgb(139 154 255 / 26%);
-  --brand: var(--primary);
-  --brand-foreground: var(--primary-foreground);
-  --ring: var(--accent);
-  --section-1-start: #070b1c;
-  --section-1-end: #0e173d;
-  --section-2-start: #0c1433;
-  --section-2-end: #142056;
-  --section-3-start: #13205a;
-  --section-3-end: #2036a4;
-  --section-4-start: #2742d4;
-  --section-4-end: #080b7a;
-  --shadow-soft: 0 20px 45px -30px rgba(0, 0, 0, 0.6);
-  --shadow-panel: 0 35px 85px -48px rgba(0, 0, 0, 0.72);
 }
 
 @theme inline {
@@ -111,23 +75,12 @@
     scroll-behavior: smooth;
   }
 
-  html.dark {
-    color-scheme: dark;
-  }
-
   body {
     @apply min-h-screen bg-background font-sans text-foreground antialiased;
     background-image:
       radial-gradient(circle at top left, rgb(8 11 122 / 16%) 0, transparent 34%),
       radial-gradient(circle at 82% 10%, rgb(40 68 255 / 10%) 0, transparent 24%),
       linear-gradient(180deg, var(--background) 0%, color-mix(in srgb, var(--background) 92%, white) 100%);
-  }
-
-  .dark body {
-    background-image:
-      radial-gradient(circle at top left, rgb(75 99 255 / 16%) 0, transparent 32%),
-      radial-gradient(circle at 82% 10%, rgb(8 11 122 / 26%) 0, transparent 24%),
-      linear-gradient(180deg, var(--background) 0%, color-mix(in srgb, var(--background) 86%, black) 100%);
   }
 
   ::selection {

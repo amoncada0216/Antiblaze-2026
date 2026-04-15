@@ -200,12 +200,12 @@ export function BeforeAfterSlider({
 
         <div
           aria-hidden
-          className="pointer-events-none absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="pointer-events-auto absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
           style={splitPosition}
         >
           <div
             className={cn(
-              "flex size-12 items-center justify-center rounded-full border border-white/80 bg-white/92 text-primary shadow-[0_16px_36px_rgba(15,23,42,0.18)] backdrop-blur-sm transition-transform duration-200",
+              "flex size-12 cursor-grab items-center justify-center rounded-full border border-white/80 bg-white/92 text-primary shadow-[0_16px_36px_rgba(15,23,42,0.18)] backdrop-blur-sm transition-transform duration-200 active:cursor-grabbing",
               isDragging ? "scale-105" : "group-hover:scale-105",
             )}
           >

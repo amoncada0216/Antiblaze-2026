@@ -2,12 +2,11 @@
 
 import { House } from "lucide-react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import type { MouseEvent } from "react";
 
 import { SiteShell } from "@/components/layout/site-shell";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { withBasePath } from "@/lib/base-path";
 import { type NavLink } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -20,6 +19,11 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ activeHref, links, onNavigate }: SiteHeaderProps) {
   const t = useTranslations("ScrollSnap.nav");
+  const locale = useLocale();
+  const whatsappHref =
+    locale === "es"
+      ? "https://wa.me/573105609958?text=Buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto."
+      : "https://wa.me/573105609958?text=Good%20day%2C%20I%20would%20like%20to%20request%20a%20quotation%20for%20a%20project.";
 
   return (
     <>
@@ -82,9 +86,26 @@ export function SiteHeader({ activeHref, links, onNavigate }: SiteHeaderProps) {
       </header>
 
       <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
-        <div className="flex items-center gap-2 rounded-[1.75rem] border border-border/70 bg-surface/85 p-2 shadow-panel backdrop-blur-xl">
-          <LocaleSwitcher />
-          <ThemeToggle />
+        <div className="flex flex-col items-end gap-2">
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="WhatsApp"
+            className="inline-flex h-[4.14rem] w-[4.14rem] items-center justify-center rounded-full border border-[#25D366] bg-[#25D366] shadow-panel transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-ring hover:border-[#35DE73] hover:bg-[#35DE73]"
+          >
+            <Image
+              src={withBasePath("/whatsapp.svg?v=2")}
+              alt=""
+              width={42}
+              height={42}
+              className="h-[2.6rem] w-[2.6rem] brightness-0 invert"
+            />
+          </a>
+
+          <div className="flex items-center rounded-[1.75rem] border border-border/70 bg-surface/85 p-2 shadow-panel backdrop-blur-xl">
+            <LocaleSwitcher />
+          </div>
         </div>
       </div>
     </>

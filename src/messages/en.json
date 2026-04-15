@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Antiblaze | Scroll snap test",
-    "description": "Scroll-snap prototype with a fixed navbar, section tracking and full-screen vertical sections."
+    "title": "Antiblaze | Duracol",
+    "description": "English landing page for Antiblaze with snap scrolling, fixed navigation, and full-screen sections."
   },
   "LocaleSwitcher": {
     "label": "Change language",
@@ -9,10 +9,6 @@
       "es": "ES",
       "en": "EN"
     }
-  },
-  "ThemeToggle": {
-    "toDark": "Enable dark mode",
-    "toLight": "Enable light mode"
   },
   "ScrollSnap": {
     "nav": {
@@ -31,29 +27,29 @@
       "section1": {
         "eyebrow": "Fire protection",
         "titleLogoAlt": "Antiblaze logo",
-        "title": "The new generation of protection for roofing systems.",
-        "description": "The evolution from <brand>Duralfoil®</brand> becomes a clearer, more current proposition that can communicate technical value from the first screen.",
+        "title": "The next generation in thermal protection",
+        "description": "<brand>Antiblaze\u00ae</brand> is the evolution of Duralfoil\u00ae: more modern, safer, and engineered to meet current standards for energy efficiency, safety, and regulatory compliance in industrial and commercial applications.\n\nIt blocks radiant heat before it enters the building, improving thermal performance and day-to-day operational efficiency.",
         "primaryCta": "Request a Quote",
         "secondaryCta": "How it works",
         "credibilityLine": "Proven in demanding industrial and commercial environments",
         "stats": {
           "stat1": {
-            "label": "Years in industrial roofing",
+            "label": "Years protecting industry in Colombia",
             "value": "29+",
             "description": ""
           },
           "stat2": {
-            "label": "Protected projects",
+            "label": "Clients served in Colombia, Ecuador, Panama, and Venezuela",
             "value": "2,500+",
             "description": ""
           },
           "stat3": {
-            "label": "Cities operated",
-            "value": "12+",
+            "label": "Cities served",
+            "value": "120+",
             "description": ""
           },
           "stat4": {
-            "label": "Roof types covered",
+            "label": "Roof system types",
             "value": "6+",
             "description": ""
           }
@@ -62,28 +58,28 @@
       "section2": {
         "eyebrow": "Solution",
         "sectionTag": "Reflective under-roof system",
-        "title": "Efficient Thermal Control for Industrial Roof Systems",
-        "problemLine1": "Roof systems absorb solar heat and push it indoors.",
-        "problemLine2": "That raises interior temperatures and affects people, operations and energy costs.",
-        "problem": "Roof systems absorb solar heat and transfer it indoors. That raises temperature and affects operations, people and energy costs.",
+        "title": "High-Performance Thermal Control",
+        "problemLine1": "Roof systems absorb solar heat and transfer it indoors.",
+        "problemLine2": "That raises interior temperature and affects people, operations, products, and energy costs.",
+        "problem": "Roof systems absorb solar heat and transfer it indoors. This increases temperature and directly impacts operations, comfort, and energy costs.",
         "installation": {
           "label": "Installed under",
-          "value": "Metal, fiber cement, concrete and other roof types"
+          "value": "Metal, fiber cement, concrete, and other roof systems"
         },
         "applications": {
-          "label": "Used in",
-          "value": "Industrial, commercial and residential projects"
+          "label": "Applied in",
+          "value": "Industrial, commercial, and residential projects"
         },
-        "product": "Antiblaze® is a reflective insulation installed beneath the roof that blocks radiant heat before it enters the space.",
-        "howItWorks": "It limits radiant heat before it enters the space, while also supporting moisture, vapor and acoustic control.",
-        "benefitsEyebrow": "Why it performs",
+        "product": "Antiblaze\u00ae is a reflective insulation layer installed beneath the roof that blocks radiant heat before it reaches the interior.",
+        "howItWorks": "It reduces heat transfer by radiation before it enters the space, while also helping with moisture and vapor control plus acoustic support.",
+        "benefitsEyebrow": "Why it works",
         "benefit1": {
           "title": "Lower interior heat load",
           "description": "Reduces heat transfer from the roof and helps maintain a more stable indoor temperature."
         },
         "benefit2": {
-          "title": "Cooling savings",
-          "description": "Reduces demand on air conditioning and ventilation, helping lower operating energy costs."
+          "title": "Lower cooling demand",
+          "description": "Reduces the load on air conditioning and ventilation, helping lower energy operating costs."
         },
         "benefit3": {
           "title": "Moisture and condensation control",
@@ -91,41 +87,41 @@
         },
         "benefit4": {
           "title": "Better operational continuity",
-          "description": "Supports more controlled conditions for people, equipment, inventory and heat-sensitive processes."
+          "description": "Supports more controlled conditions for personnel, equipment, inventory, and heat-sensitive processes."
         },
-        "support": "Antiblaze® combines thermal performance, fire resistance and durability in one practical under-roof solution.",
-        "ctaSupport": "ASSESS THE THERMAL IMPACT ON YOUR PROJECT",
-        "ctaMicrocopy": "Quick guidance for the right system and application.",
+        "support": "Antiblaze\u00ae combines thermal performance, fire resistance, and durability in one practical under-roof solution.",
+        "ctaSupport": "ASSESS THERMAL IMPACT ON YOUR PROJECT",
+        "ctaMicrocopy": "Fast technical guidance to define the right solution.",
         "ctaLabel": "REQUEST A QUOTE",
         "comparisonEyebrow": "REAL COMPARISON",
         "comparisonTitle": "Before and after installation",
-        "comparisonHelper": "Drag to compare a roof without the installation and a roof with Antiblaze®.",
+        "comparisonHelper": "Slide to compare a roof without installation versus a roof with Antiblaze\u00ae.",
         "comparisonDescription": "",
         "diagramStatus": "Image pending",
-        "comparisonWithoutLabel": "WITHOUT ANTIBLAZE®",
-        "comparisonWithoutText": "High heat gain",
-        "comparisonWithLabel": "WITH ANTIBLAZE®",
+        "comparisonWithoutLabel": "WITHOUT ANTIBLAZE\u00ae",
+        "comparisonWithoutText": "Higher heat gain",
+        "comparisonWithLabel": "WITH ANTIBLAZE\u00ae",
         "comparisonWithText": "Radiant heat blocked",
-        "comparisonAriaLabel": "Before and after comparison slider",
+        "comparisonAriaLabel": "Before-and-after comparison slider",
         "comparisonKeyboardHint": "Use the left and right arrow keys to move the comparison.",
-        "comparisonBeforeAlt": "Roof without reflective installation showing higher solar heat transfer into the interior.",
-        "comparisonAfterAlt": "Roof with Antiblaze® installed showing lower radiant heat transfer into the interior.",
+        "comparisonBeforeAlt": "Roof without reflective insulation, showing higher solar heat transfer into the interior.",
+        "comparisonAfterAlt": "Roof with Antiblaze\u00ae installed, showing lower radiant heat transfer into the interior.",
         "technical1": {
           "title": "Lower thermal transfer",
-          "description": "Reduces the passage of heat from the roof into the interior."
+          "description": "Reduces the flow of heat from the roof into the interior."
         },
         "technical2": {
-          "title": "More efficient and sustainable solution",
-          "description": "Contributes to lower energy consumption and a more responsible operation."
+          "title": "More efficient and sustainable",
+          "description": "Helps reduce energy use and supports a more responsible operation."
         },
         "technical3": {
-          "title": "Lightweight, safe and durable",
-          "description": "Installs beneath the roof without adding significant load and maintains long-term performance."
+          "title": "Lightweight, safe, and durable",
+          "description": "Installed beneath the roof without adding significant structural load, with long-term performance."
         },
         "diagramPlaceholder": "Diagram placeholder",
         "heatBarrier": {
           "title": "Heat barrier",
-          "subtitle": "Blocks radiant heat"
+          "subtitle": "Blocks radiation"
         },
         "moistureBarrier": {
           "title": "Moisture barrier",
@@ -141,42 +137,143 @@
         }
       },
       "section3": {
-        "eyebrow": "Product",
-        "title": "Current Product",
-        "description": "Third full-screen snap target inside the same scroll container."
+        "eyebrow": "ABOUT US",
+        "title": "Proven experience behind every installation",
+        "intro": "Since 1997, we have delivered under-roof insulation solutions across Colombia with strong technical criteria, qualified execution, and a focus on measurable results.",
+        "credibility": {
+          "title": "Execution backed by international support and local accountability",
+          "body": "Antiblaze is the current evolution of Duralfoil. Our operation in Colombia is supported by an exclusive representation and import relationship, and every project is executed with installation protocols, quality controls, and qualified personnel.",
+          "points": {
+            "point1": "Exclusive representation and import relationship in Colombia",
+            "point2": "International manufacturing backing for system continuity",
+            "point3": "Standardized installation protocols and quality control",
+            "point4": "Qualified technical staff and trained installation crews"
+          }
+        },
+        "stats": {
+          "title": "Operational credibility in numbers",
+          "item1": {
+            "value": "Since 1997",
+            "label": "Operation and installation in Colombia"
+          },
+          "item2": {
+            "value": "2,500+",
+            "label": "Clients and projects served"
+          },
+          "item3": {
+            "value": "Nationwide",
+            "label": "Deployment capacity across the country"
+          },
+          "item4": {
+            "value": "Qualified",
+            "label": "Technical and installation team"
+          }
+        },
+        "process": {
+          "title": "How we execute each project",
+          "description": "A practical four-step flow to define the right technical solution, install with control, and deliver with verification.",
+          "step1": {
+            "title": "Project assessment",
+            "description": "We evaluate roof typology, thermal behavior, and operational conditions."
+          },
+          "step2": {
+            "title": "Technical definition",
+            "description": "We define the system, project scope, and installation route."
+          },
+          "step3": {
+            "title": "Supply and installation",
+            "description": "We coordinate supply and execute the work with trained field teams."
+          },
+          "step4": {
+            "title": "Delivery and verification",
+            "description": "We close with technical validation and documented handover."
+          }
+        },
+        "coverage": {
+          "title": "National coverage across Colombia",
+          "description": "We serve projects in major cities and regional hubs with operational capability for nationwide deployment.",
+          "cities": {
+            "city1": "Bogota",
+            "city2": "Medellin",
+            "city3": "Cali",
+            "city4": "Barranquilla",
+            "city5": "Manizales",
+            "city6": "Ibague",
+            "city7": "Pereira",
+            "city8": "Tunja",
+            "city9": "Villavicencio",
+            "city10": "Cartagena",
+            "city11": "Santa Marta",
+            "city12": "Monteria",
+            "city13": "Nationwide coverage"
+          }
+        },
+        "gallery": {
+          "eyebrow": "REAL PROJECT EVIDENCE",
+          "title": "Completed projects across industrial and commercial sectors",
+          "description": "Representative references that show real field execution and operational performance targets.",
+          "placeholderLabel": "Project record",
+          "project1": {
+            "title": "Industrial plant - improved thermal stability",
+            "summary": "Under-roof implementation to reduce heat load and improve process conditions.",
+            "sector": "Industrial",
+            "location": "Bogota"
+          },
+          "project2": {
+            "title": "Logistics warehouse - radiant heat control",
+            "summary": "Reflective solution for high-bay logistics operations with continuous occupancy.",
+            "sector": "Logistics",
+            "location": "Medellin"
+          },
+          "project3": {
+            "title": "Commercial installation - roof retrofit",
+            "summary": "Technical intervention to improve indoor thermal behavior in a high-traffic environment.",
+            "sector": "Commercial",
+            "location": "Cali"
+          },
+          "project4": {
+            "title": "Agro-industrial operation - controlled conditions",
+            "summary": "Installation focused on achieving greater indoor stability for heat-sensitive processes.",
+            "sector": "Agro-industrial",
+            "location": "Barranquilla"
+          }
+        },
+        "closingStatement": "More than two decades of field execution support every Antiblaze recommendation. We focus on solutions that are installed correctly, maintain performance, and deliver measurable value.",
+        "ctaSupport": "Define the right technical path for your roofing project.",
+        "ctaLabel": "Request technical review"
       },
       "section4": {
         "eyebrow": "Contact",
         "title": "Send us a message",
-        "description": "Tell us about your project and we will help you define the right solution for your roof system.",
+        "description": "Tell us about your project and we will help you define the right solution for your roof.",
         "mailSubject": "Antiblaze inquiry",
         "submit": "Send message",
         "submitHelper": "Submitting opens your email client with the message ready to send.",
-        "contactInfoEyebrow": "Contact details",
+        "contactInfoEyebrow": "Contact information",
         "contactInfoTitle": "Direct channels for support and sales",
-        "contactInfoDescription": "Duracol is the exclusive importer and representative for Colombia. You can also reach us by WhatsApp or email for support, sales and quotations.",
+        "contactInfoDescription": "Duracol is the exclusive importer and representative of Antiblaze\u00ae in Colombia.\nYou can also reach us by WhatsApp or email for support, sales, and quotations.",
         "responseTitle": "Commercial response",
-        "responseText": "Share the main details of your project and we will respond through the most appropriate channel.",
+        "responseText": "Share the key details of your project and we will reply through the most suitable channel.",
         "form": {
           "name": "Name",
           "namePlaceholder": "Your name",
           "company": "Company",
-          "companyPlaceholder": "Your company name",
+          "companyPlaceholder": "Company name",
           "email": "Email",
           "emailPlaceholder": "you@company.com",
           "phone": "Phone",
           "phonePlaceholder": "Your contact number",
           "message": "Message",
-          "messagePlaceholder": "Tell us about your project, roof type or current need."
+          "messagePlaceholder": "Tell us about your project, roof type, or current need."
         },
         "contactItems": {
           "exclusiveRep": {
             "label": "Duracol",
-            "value": "Exclusive Importer and Representative for Colombia"
+            "value": "Exclusive importer and representative in Colombia"
           },
           "whatsapp": {
             "label": "WhatsApp",
-            "value": "310 560 9958"
+            "value": "+57 310 560 9958"
           },
           "email": {
             "label": "Support and Sales",
@@ -187,3 +284,4 @@
     }
   }
 }
+

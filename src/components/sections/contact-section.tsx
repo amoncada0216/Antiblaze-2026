@@ -3,26 +3,27 @@
 import {
   Building2,
   Mail,
-  MessageSquare,
-  Phone,
   Send,
   type LucideIcon,
 } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { type FormEvent } from "react";
 
 import { SiteShell } from "@/components/layout/site-shell";
 import { buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { withBasePath } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
 
 import { SnapSection } from "./snap-section";
 
 type ContactItemKey = "exclusiveRep" | "whatsapp" | "email";
+type ContactItemIcon = LucideIcon | "whatsapp";
 
 const contactItems: Array<{
-  href?: string;
-  icon: LucideIcon;
+  icon: ContactItemIcon;
   key: ContactItemKey;
 }> = [
   {
@@ -30,19 +31,28 @@ const contactItems: Array<{
     key: "exclusiveRep",
   },
   {
-    href: "https://wa.me/573105609958",
-    icon: Phone,
+    icon: "whatsapp",
     key: "whatsapp",
   },
   {
-    href: "mailto:info@antiblaze.com.co",
     icon: Mail,
     key: "email",
   },
 ];
 
-export function ContactSection() {
+type ContactSectionProps = {
+  playKey: number;
+};
+
+export function ContactSection({ playKey }: ContactSectionProps) {
   const t = useTranslations("ScrollSnap.sections.section4");
+  const reduceMotion = useReducedMotion();
+  const leftCardTransition = reduceMotion
+    ? { duration: 0 }
+    : { duration: 0.82, ease: [0.22, 1, 0.36, 1] as const };
+  const rightCardTransition = reduceMotion
+    ? { duration: 0 }
+    : { duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const };
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -87,12 +97,28 @@ export function ContactSection() {
       />
 
       <SiteShell className="relative flex h-full items-center py-24 sm:py-28">
-        <div className="grid w-full gap-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:items-stretch xl:gap-10">
-          <div className="rounded-[2rem] border border-border/70 bg-background-elevated/80 p-6 shadow-panel backdrop-blur-xl lg:p-7">
-            <p className="text-sm font-medium uppercase tracking-[0.32em] text-foreground-soft/64">
+        <div
+          className="grid w-full gap-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:items-stretch xl:gap-10"
+        >
+          <motion.div
+            key={`contact-left-${playKey}`}
+            initial={
+              reduceMotion || playKey === 0
+                ? false
+                : {
+                    opacity: 0,
+                    x: -140,
+                    y: 20,
+                  }
+            }
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={leftCardTransition}
+            className="rounded-[2rem] border border-border/70 bg-background-elevated/80 p-6 shadow-panel backdrop-blur-xl will-change-transform lg:p-7"
+          >
+            <p className="text-[0.76rem] font-semibold uppercase tracking-[0.22em] text-primary/78">
               {t("eyebrow")}
             </p>
-            <h2 className="mt-5 max-w-[34rem] text-[2.6rem] font-semibold leading-[0.94] tracking-[-0.06em] text-foreground sm:text-[3rem] xl:text-[3.28rem]">
+            <h2 className="mt-3 max-w-[34rem] text-[2.6rem] font-semibold leading-[0.94] tracking-[-0.06em] text-foreground sm:text-[3rem] xl:text-[3.28rem]">
               {t("title")}
             </h2>
             <p className="mt-5 max-w-[33rem] text-[1rem] leading-7 text-foreground/72">
@@ -195,32 +221,60 @@ export function ContactSection() {
                   {t("submit")}
                   <Send className="size-4" aria-hidden />
                 </button>
-                <p className="mt-3 text-[0.82rem] leading-6 text-foreground-soft/62">
-                  {t("submitHelper")}
-                </p>
               </div>
             </form>
-          </div>
+          </motion.div>
 
-          <div className="flex h-full flex-col rounded-[2rem] border border-border/70 bg-white/92 p-6 shadow-panel backdrop-blur-xl lg:p-7">
-            <p className="text-sm font-medium uppercase tracking-[0.32em] text-foreground-soft/64">
+          <motion.div
+            key={`contact-right-${playKey}`}
+            initial={
+              reduceMotion || playKey === 0
+                ? false
+                : {
+                    opacity: 0,
+                    x: 140,
+                    y: 20,
+                  }
+            }
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={rightCardTransition}
+            className="flex h-full flex-col rounded-[2rem] border border-border/70 bg-white/92 p-6 shadow-panel backdrop-blur-xl will-change-transform lg:p-7"
+          >
+            <p className="text-[0.76rem] font-semibold uppercase tracking-[0.22em] text-primary/78">
               {t("contactInfoEyebrow")}
             </p>
-            <h3 className="mt-5 text-[2rem] font-semibold leading-[0.96] tracking-[-0.05em] text-foreground sm:text-[2.3rem]">
+            <h3 className="mt-3 text-[2rem] font-semibold leading-[0.96] tracking-[-0.05em] text-foreground sm:text-[2.3rem]">
               {t("contactInfoTitle")}
             </h3>
-            <p className="mt-4 max-w-[27rem] text-[0.98rem] leading-7 text-foreground/68">
+            <p className="mt-4 max-w-[27rem] whitespace-pre-line text-[0.98rem] leading-7 text-foreground/68">
               {t("contactInfoDescription")}
             </p>
 
             <div className="mt-8 space-y-3">
               {contactItems.map((item) => {
-                const Icon = item.icon;
-                const content = (
-                  <>
-                    <div className="rounded-full bg-primary/6 p-2.5 text-primary/72">
-                      <Icon className="size-4" aria-hidden />
+                const iconNode =
+                  item.icon === "whatsapp" ? (
+                    <div className="rounded-full bg-[#25D366] p-2.5 text-white">
+                      <Image
+                        src={withBasePath("/whatsapp.svg?v=2")}
+                        alt=""
+                        width={16}
+                        height={16}
+                        className="size-4"
+                      />
                     </div>
+                  ) : (
+                    <div className="rounded-full bg-primary/6 p-2.5 text-primary/72">
+                      <item.icon className="size-4" aria-hidden />
+                    </div>
+                  );
+
+                return (
+                  <div
+                    key={item.key}
+                    className="flex items-start gap-4 rounded-[1.4rem] border border-border/70 bg-surface/72 p-4"
+                  >
+                    {iconNode}
                     <div className="min-w-0">
                       <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-foreground-soft/56">
                         {t(`contactItems.${item.key}.label`)}
@@ -229,48 +283,12 @@ export function ContactSection() {
                         {t(`contactItems.${item.key}.value`)}
                       </p>
                     </div>
-                  </>
-                );
-
-                return item.href ? (
-                  <a
-                    key={item.key}
-                    href={item.href}
-                    target={item.key === "whatsapp" ? "_blank" : undefined}
-                    rel={item.key === "whatsapp" ? "noreferrer" : undefined}
-                    className="flex items-start gap-4 rounded-[1.4rem] border border-border/70 bg-surface/72 p-4 transition-colors hover:bg-surface-strong/72"
-                  >
-                    {content}
-                  </a>
-                ) : (
-                  <div
-                    key={item.key}
-                    className="flex items-start gap-4 rounded-[1.4rem] border border-border/70 bg-surface/72 p-4"
-                  >
-                    {content}
                   </div>
                 );
               })}
             </div>
 
-            <div className="mt-auto pt-8">
-              <div className="rounded-[1.4rem] border border-border/70 bg-surface/72 p-4">
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-primary/6 p-2 text-primary/72">
-                    <MessageSquare className="size-4" aria-hidden />
-                  </div>
-                  <div>
-                    <p className="text-[0.8rem] font-semibold uppercase tracking-[0.2em] text-foreground-soft/62">
-                      {t("responseTitle")}
-                    </p>
-                    <p className="mt-1 text-[0.88rem] leading-6 text-foreground/68">
-                      {t("responseText")}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </SiteShell>
     </SnapSection>

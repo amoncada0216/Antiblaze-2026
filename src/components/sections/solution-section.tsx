@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { type MouseEvent } from "react";
 
 import { SiteShell } from "@/components/layout/site-shell";
 import { buttonVariants } from "@/components/ui/button";
@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 
 import { BeforeAfterSlider } from "./before-after-slider";
 import { SnapSection } from "./snap-section";
+import { useSectionInView } from "./use-section-in-view";
 
 type SolutionSectionProps = {
   onNavigate: (href: string) => (event: MouseEvent<HTMLAnchorElement>) => void;
@@ -42,52 +43,17 @@ const valueCardIcons = [
 ] as const;
 
 const BEFORE_IMAGE = {
-  src: "/diagrama-eng.png",
-  backgroundPosition: "left center",
+  src: "/before.png",
 } as const;
 
 const AFTER_IMAGE = {
-  src: "/diagrama-eng.png",
-  backgroundPosition: "right center",
+  src: "/after.png",
 } as const;
 
 export function SolutionSection({ onNavigate }: SolutionSectionProps) {
   const t = useTranslations("ScrollSnap.sections.section2");
   const reduceMotion = useReducedMotion();
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-  const [hasEntered, setHasEntered] = useState(false);
-
-  useEffect(() => {
-    if (reduceMotion) {
-      setHasEntered(true);
-      return;
-    }
-
-    const element = sectionRef.current;
-    if (!element) {
-      return;
-    }
-
-    const scrollRoot = element.closest("main");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-
-        if (entry?.isIntersecting) {
-          setHasEntered(true);
-          observer.disconnect();
-        }
-      },
-      {
-        root: scrollRoot instanceof HTMLElement ? scrollRoot : null,
-        threshold: 0.35,
-      },
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, [reduceMotion]);
+  const { isInView, sectionRef } = useSectionInView({ threshold: 0.35 });
 
   const leftCardTransition = reduceMotion
     ? { duration: 0 }
@@ -131,7 +97,7 @@ export function SolutionSection({ onNavigate }: SolutionSectionProps) {
                     }
               }
               animate={
-                hasEntered || reduceMotion
+                isInView || reduceMotion
                   ? {
                       opacity: 1,
                       x: 0,
@@ -144,7 +110,10 @@ export function SolutionSection({ onNavigate }: SolutionSectionProps) {
               transition={leftCardTransition}
               className="flex h-full flex-col rounded-[2rem] border border-border/70 bg-background-elevated/80 p-6 shadow-panel backdrop-blur-xl lg:p-7"
             >
-              <h2 className="max-w-[34rem] text-[2.45rem] font-semibold leading-[0.94] tracking-[-0.056em] text-foreground sm:text-[2.85rem] xl:text-[3.15rem]">
+              <p className="text-[0.76rem] font-semibold uppercase tracking-[0.22em] text-primary/78">
+                {t("eyebrow")}
+              </p>
+              <h2 className="mt-3 max-w-[34rem] text-[2.45rem] font-semibold leading-[0.94] tracking-[-0.056em] text-foreground sm:text-[2.85rem] xl:text-[3.15rem]">
                 {t("title")}
               </h2>
 
@@ -192,7 +161,7 @@ export function SolutionSection({ onNavigate }: SolutionSectionProps) {
             </motion.div>
           </div>
 
-          <div className="relative">
+          <div className="relative min-h-0">
             <motion.div
               initial={
                 reduceMotion
@@ -206,7 +175,7 @@ export function SolutionSection({ onNavigate }: SolutionSectionProps) {
                     }
               }
               animate={
-                hasEntered || reduceMotion
+                isInView || reduceMotion
                   ? {
                       opacity: 1,
                       x: 0,
@@ -217,7 +186,7 @@ export function SolutionSection({ onNavigate }: SolutionSectionProps) {
                   : undefined
               }
               transition={rightCardTransition}
-              className="flex h-full flex-col rounded-[2.1rem] border border-border/70 bg-white/94 p-5 shadow-panel lg:p-6"
+              className="flex h-full min-h-0 flex-col rounded-[2.1rem] border border-border/70 bg-white/94 p-5 shadow-panel lg:p-6"
             >
               <p className="text-[0.76rem] font-semibold uppercase tracking-[0.22em] text-primary/78">
                 {t("comparisonEyebrow")}
@@ -230,7 +199,7 @@ export function SolutionSection({ onNavigate }: SolutionSectionProps) {
               </p>
 
               <BeforeAfterSlider
-                className="mt-5"
+                className="mt-5 flex-1 min-h-[20rem] aspect-auto sm:min-h-[24rem]"
                 before={{
                   ...BEFORE_IMAGE,
                   alt: t("comparisonBeforeAlt"),

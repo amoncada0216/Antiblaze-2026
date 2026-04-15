@@ -14,6 +14,7 @@ import { withBasePath } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
 
 import { SnapSection } from "./snap-section";
+import { useSectionInView } from "./use-section-in-view";
 
 type HomeHeroSectionProps = {
   onNavigate: (href: string) => (event: MouseEvent<HTMLAnchorElement>) => void;
@@ -79,6 +80,8 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
   const t = useTranslations("ScrollSnap.sections.section1");
   const locale = useLocale();
   const reduceMotion = useReducedMotion();
+  const { isInView, sectionRef } = useSectionInView({ threshold: 0.35 });
+  const shouldReveal = reduceMotion || isInView;
   const heroStats = [
     {
       description: t("stats.stat1.description"),
@@ -114,7 +117,9 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
     <SnapSection id="home" tone="home">
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, scale: 1.04 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={
+          shouldReveal ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.04 }
+        }
         transition={imageTransition}
         className="absolute inset-0"
       >
@@ -131,14 +136,14 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
       <motion.div
         aria-hidden
         initial={reduceMotion ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: shouldReveal ? 1 : 0 }}
         transition={imageTransition}
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,8,95,0.74)_0%,rgba(8,11,122,0.66)_24%,rgba(8,11,122,0.38)_46%,rgba(8,11,122,0.14)_62%,transparent_78%),linear-gradient(0deg,rgba(5,8,95,0.84)_0%,rgba(8,11,122,0.62)_16%,rgba(8,11,122,0.24)_34%,transparent_58%)]"
       />
       <motion.div
         aria-hidden
         initial={reduceMotion ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: shouldReveal ? 1 : 0 }}
         transition={{
           ...imageTransition,
           delay: reduceMotion ? 0 : 0.08,
@@ -148,7 +153,11 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
       <motion.div
         aria-hidden
         initial={reduceMotion ? false : { opacity: 0, scale: 0.92 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={
+          shouldReveal
+            ? { opacity: 1, scale: 1 }
+            : { opacity: 0, scale: 0.92 }
+        }
         transition={{
           ...imageTransition,
           delay: reduceMotion ? 0 : 0.14,
@@ -158,7 +167,11 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
       <motion.div
         aria-hidden
         initial={reduceMotion ? false : { opacity: 0, scale: 0.92 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={
+          shouldReveal
+            ? { opacity: 1, scale: 1 }
+            : { opacity: 0, scale: 0.92 }
+        }
         transition={{
           ...imageTransition,
           delay: reduceMotion ? 0 : 0.2,
@@ -168,7 +181,11 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
       <motion.div
         aria-hidden
         initial={reduceMotion ? false : { opacity: 0, scale: 0.92 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={
+          shouldReveal
+            ? { opacity: 1, scale: 1 }
+            : { opacity: 0, scale: 0.92 }
+        }
         transition={{
           ...imageTransition,
           delay: reduceMotion ? 0 : 0.26,
@@ -187,10 +204,10 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
           }}
           className="pointer-events-none absolute left-[-4%] top-1/2 h-[30rem] w-[34rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(7,12,82,0.34)_0%,rgba(7,12,82,0.18)_42%,transparent_74%)] blur-3xl"
         />
-        <div className="flex h-full w-full items-center justify-start">
+        <div ref={sectionRef} className="flex h-full w-full items-center justify-start">
           <motion.div
             initial={reduceMotion ? false : "hidden"}
-            animate="visible"
+            animate={shouldReveal ? "visible" : "hidden"}
             variants={{
               hidden: {},
               visible: {
@@ -295,7 +312,7 @@ export function HomeHeroSection({ onNavigate }: HomeHeroSectionProps) {
 
       <motion.div
         initial={reduceMotion ? false : "hidden"}
-        animate="visible"
+        animate={shouldReveal ? "visible" : "hidden"}
         variants={{
           hidden: {},
           visible: {

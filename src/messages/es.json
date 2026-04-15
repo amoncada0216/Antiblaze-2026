@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "title": "Antiblaze | Proteccion cortafuego",
+    "title": "Antiblaze | Duracol",
     "description": "Prototipo en español para la nueva web de Antiblaze, con scroll snap, navbar fija y secciones a pantalla completa."
   },
   "LocaleSwitcher": {
@@ -9,10 +9,6 @@
       "es": "ES",
       "en": "EN"
     }
-  },
-  "ThemeToggle": {
-    "toDark": "Activar modo oscuro",
-    "toLight": "Activar modo claro"
   },
   "ScrollSnap": {
     "nav": {
@@ -141,9 +137,110 @@
         }
       },
       "section3": {
-        "eyebrow": "Producto",
-        "title": "Proteccion cortafuego actual",
-        "description": "Esta seccion prepara el espacio para presentar beneficios, aplicaciones y el valor tecnico del producto Antiblaze."
+        "eyebrow": "NOSOTROS",
+        "title": "Experiencia comprobada detras de cada instalacion",
+        "intro": "Desde 1997 desarrollamos soluciones de aislamiento bajo cubierta en Colombia con criterio tecnico, ejecucion calificada y enfoque en resultados reales.",
+        "credibility": {
+          "title": "Ejecucion respaldada por soporte internacional y responsabilidad local",
+          "body": "Antiblaze es la evolucion actual de Duralfoil. Nuestra operacion en Colombia cuenta con una relacion exclusiva de representacion e importacion, y cada proyecto se ejecuta con protocolos de instalacion, controles de calidad y personal calificado.",
+          "points": {
+            "point1": "Relacion exclusiva de representacion e importacion en Colombia",
+            "point2": "Respaldo internacional de manufactura para continuidad del sistema",
+            "point3": "Protocolos estandarizados de instalacion y control de calidad",
+            "point4": "Personal tecnico y cuadrillas de instalacion calificadas"
+          }
+        },
+        "stats": {
+          "title": "Credibilidad operativa en cifras",
+          "item1": {
+            "value": "Desde 1997",
+            "label": "Operacion e instalacion en Colombia"
+          },
+          "item2": {
+            "value": "2.500+",
+            "label": "Clientes y proyectos atendidos"
+          },
+          "item3": {
+            "value": "Nacional",
+            "label": "Capacidad de despliegue en todo el pais"
+          },
+          "item4": {
+            "value": "Calificado",
+            "label": "Equipo tecnico y de instalacion"
+          }
+        },
+        "process": {
+          "title": "Como ejecutamos cada proyecto",
+          "description": "Un flujo practico de 4 etapas para definir tecnicamente, instalar con control y entregar con verificacion.",
+          "step1": {
+            "title": "Diagnostico del proyecto",
+            "description": "Evaluamos tipologia de cubierta, comportamiento termico y condiciones operativas."
+          },
+          "step2": {
+            "title": "Definicion tecnica",
+            "description": "Definimos sistema, alcance y ruta de instalacion segun el proyecto."
+          },
+          "step3": {
+            "title": "Suministro e instalacion",
+            "description": "Coordinamos suministro y ejecutamos con personal entrenado en campo."
+          },
+          "step4": {
+            "title": "Entrega y verificacion",
+            "description": "Cerramos con validacion tecnica y entrega documentada de la intervencion."
+          }
+        },
+        "coverage": {
+          "title": "Cobertura nacional en Colombia",
+          "description": "Atendemos proyectos en ciudades principales y nodos regionales, con capacidad operativa para despliegue nacional.",
+          "cities": {
+            "city1": "Bogota",
+            "city2": "Medellin",
+            "city3": "Cali",
+            "city4": "Barranquilla",
+            "city5": "Manizales",
+            "city6": "Ibague",
+            "city7": "Pereira",
+            "city8": "Tunja",
+            "city9": "Villavicencio",
+            "city10": "Cartagena",
+            "city11": "Santa Marta",
+            "city12": "Monteria",
+            "city13": "Cobertura nacional"
+          }
+        },
+        "gallery": {
+          "eyebrow": "EVIDENCIA DE PROYECTOS REALES",
+          "title": "Proyectos ejecutados en sectores industriales y comerciales",
+          "description": "Referencias representativas que muestran ejecucion real en campo y objetivos de desempeno operativo.",
+          "placeholderLabel": "Registro de proyecto",
+          "project1": {
+            "title": "Planta industrial - mejora de estabilidad termica",
+            "summary": "Implementacion bajo cubierta para reducir carga de calor y mejorar condiciones de proceso.",
+            "sector": "Industrial",
+            "location": "Bogota"
+          },
+          "project2": {
+            "title": "Bodega logistica - control de calor radiante",
+            "summary": "Solucion reflectiva para operacion logistica de gran altura y ocupacion continua.",
+            "sector": "Logistica",
+            "location": "Medellin"
+          },
+          "project3": {
+            "title": "Instalacion comercial - retrofit de cubierta",
+            "summary": "Intervencion tecnica para mejorar el comportamiento termico interior en entorno de alto flujo.",
+            "sector": "Comercial",
+            "location": "Cali"
+          },
+          "project4": {
+            "title": "Operacion agroindustrial - condiciones controladas",
+            "summary": "Instalacion orientada a mayor estabilidad interior en procesos sensibles al calor.",
+            "sector": "Agroindustrial",
+            "location": "Barranquilla"
+          }
+        },
+        "closingStatement": "Mas de dos decadas de ejecucion en campo respaldan cada recomendacion de Antiblaze. Nos enfocamos en soluciones que se instalan correctamente, mantienen su desempeno y entregan valor medible.",
+        "ctaSupport": "Define la ruta tecnica adecuada para tu proyecto de cubierta.",
+        "ctaLabel": "Solicitar revision tecnica"
       },
       "section4": {
         "eyebrow": "Contacto",
@@ -154,7 +251,7 @@
         "submitHelper": "Al enviar, se abrirá tu cliente de correo con el mensaje listo para salir.",
         "contactInfoEyebrow": "Información de contacto",
         "contactInfoTitle": "Canales directos para soporte y ventas",
-        "contactInfoDescription": "Duracol es el importador y representante exclusivo para Colombia de Antiblaze®. También puedes escribirnos por Whatsapp o correo para soporte, ventas y cotizaciones.",
+        "contactInfoDescription": "Duracol es el importador y representante exclusivo para Colombia de Antiblaze®.\nTambién puedes escribirnos por Whatsapp o correo para soporte, ventas y cotizaciones.",
         "responseTitle": "Atención comercial",
         "responseText": "Compártenos los datos principales de tu proyecto y te responderemos por el canal más adecuado.",
         "form": {
@@ -176,7 +273,7 @@
           },
           "whatsapp": {
             "label": "Whatsapp",
-            "value": "310 560 9958"
+            "value": "+57 310 560 9958"
           },
           "email": {
             "label": "Soporte y Ventas",

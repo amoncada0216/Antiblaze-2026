@@ -12,7 +12,7 @@ export default function RedirectLayout({ children }: RedirectLayoutProps) {
   return (
     <html lang={routing.defaultLocale}>
       <head>
-        <title>Redirecting...</title>
+        <title>Antiblaze | Duracol</title>
         <meta httpEquiv="refresh" content={`0; url=${redirectTarget}`} />
       </head>
       <body>{children}</body>

@@ -1,8 +1,14 @@
-"use client";
+﻿"use client";
 
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 import { useLocale } from "next-intl";
-import { useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
+import {
+  useRef,
+  useState,
+  type KeyboardEvent,
+  type MouseEvent,
+} from "react";
 
 import { SiteShell } from "@/components/layout/site-shell";
 import { buttonVariants } from "@/components/ui/button";
@@ -12,6 +18,7 @@ import { SnapSection } from "./snap-section";
 
 type FAQSectionProps = {
   onNavigate: (href: string) => (event: MouseEvent<HTMLAnchorElement>) => void;
+  playKey: number;
 };
 
 type FAQItem = {
@@ -24,33 +31,33 @@ const FAQ_CONTENT = {
   en: {
     ctaLabel: "REQUEST A QUOTE",
     description:
-      "We answer the most common questions about how Antiblaze® works, installation, compatibility and benefits.",
+      "We answer the most common questions about how Antiblaze\u00ae works, installation, compatibility and benefits.",
     eyebrow: "FAQ",
     items: [
       {
         answer:
-          "Antiblaze® is a reflective insulation installed beneath the roof to help block radiant heat before it enters the interior space.",
+          "Antiblaze\u00ae is a reflective insulation installed beneath the roof to help block radiant heat before it enters the interior space.",
         id: "faq-1",
-        question: "What is Antiblaze®?",
+        question: "What is Antiblaze\u00ae?",
       },
       {
         answer:
           "It works by reflecting a significant portion of the thermal radiation received by the roof. This reduces heat transfer into the interior and helps improve thermal conditions inside the space.",
         id: "faq-2",
-        question: "How does Antiblaze® work beneath the roof?",
+        question: "How does Antiblaze\u00ae work beneath the roof?",
       },
       {
         answer:
-          "Antiblaze® primarily acts against radiant heat under the roof, while other systems may focus more on thermal resistance through mass or thickness. Its value lies in controlling heat gain at the source with a lightweight, functional solution.",
+          "Antiblaze\u00ae primarily acts against radiant heat under the roof, while other systems may focus more on thermal resistance through mass or thickness. Its value lies in controlling heat gain at the source with a lightweight, functional solution.",
         id: "faq-3",
         question:
-          "What is the difference between Antiblaze® and traditional insulation?",
+          "What is the difference between Antiblaze\u00ae and traditional insulation?",
       },
       {
         answer:
           "Yes. It helps reduce the thermal load entering from the roof, which can contribute to a more stable and comfortable indoor temperature.",
         id: "faq-4",
-        question: "Does Antiblaze® help reduce indoor temperature?",
+        question: "Does Antiblaze\u00ae help reduce indoor temperature?",
       },
       {
         answer:
@@ -68,7 +75,7 @@ const FAQ_CONTENT = {
         answer:
           "Yes. It is especially useful on metal roofs, where solar radiation can generate high heat transfer into the interior.",
         id: "faq-7",
-        question: "Does Antiblaze® work on metal roofs?",
+        question: "Does Antiblaze\u00ae work on metal roofs?",
       },
       {
         answer:
@@ -78,7 +85,7 @@ const FAQ_CONTENT = {
       },
       {
         answer:
-          "Yes. Antiblaze® can help limit moisture and condensation under the roof, improving the overall performance of the system in demanding environments.",
+          "Yes. Antiblaze\u00ae can help limit moisture and condensation under the roof, improving the overall performance of the system in demanding environments.",
         id: "faq-9",
         question: "Does it help control moisture and condensation?",
       },
@@ -99,13 +106,13 @@ const FAQ_CONTENT = {
         answer:
           "No. It is a lightweight solution designed to be installed beneath the roof without adding significant load to the structural system.",
         id: "faq-12",
-        question: "Does Antiblaze® add significant weight to the structure?",
+        question: "Does Antiblaze\u00ae add significant weight to the structure?",
       },
       {
         answer:
           "It is designed to deliver sustained long-term performance when installed correctly and used under proper conditions.",
         id: "faq-13",
-        question: "How long does Antiblaze® last?",
+        question: "How long does Antiblaze\u00ae last?",
       },
       {
         answer:
@@ -129,13 +136,13 @@ const FAQ_CONTENT = {
         answer:
           "It is recommended for warehouses, industrial plants, logistics centers, commercial facilities, institutional buildings and other spaces where under-roof heat affects operations, comfort or energy use.",
         id: "faq-17",
-        question: "What types of projects is Antiblaze® recommended for?",
+        question: "What types of projects is Antiblaze\u00ae recommended for?",
       },
       {
         answer:
           "Yes. By reducing heat transfer into the interior, it can contribute to more efficient operation and lower cooling demand.",
         id: "faq-18",
-        question: "Can Antiblaze® help improve energy efficiency?",
+        question: "Can Antiblaze\u00ae help improve energy efficiency?",
       },
       {
         answer:
@@ -153,146 +160,153 @@ const FAQ_CONTENT = {
     title: "Frequently Asked Questions",
   },
   es: {
-    ctaLabel: "SOLICITAR COTIZACIÓN",
+    ctaLabel: "SOLICITAR COTIZACIÃ“N",
     description:
-      "Resolvemos las preguntas más comunes sobre funcionamiento, instalación, compatibilidad y beneficios de Antiblaze®.",
+      "Resolvemos las preguntas mÃ¡s comunes sobre funcionamiento, instalaciÃ³n, compatibilidad y beneficios de Antiblaze\u00ae.",
     eyebrow: "FAQ",
     items: [
       {
         answer:
-          "Antiblaze® es un aislante reflectivo que se instala bajo cubierta para ayudar a bloquear el calor radiante antes de que ingrese al espacio interior.",
+          "Antiblaze\u00ae es un aislante reflectivo que se instala bajo cubierta para ayudar a bloquear el calor radiante antes de que ingrese al espacio interior.",
         id: "faq-1",
-        question: "¿Qué es Antiblaze®?",
+        question: "Â¿QuÃ© es Antiblaze\u00ae?",
       },
       {
         answer:
-          "Funciona reflejando una parte importante de la radiación térmica que recibe la cubierta. Así reduce la transferencia de calor hacia el interior y ayuda a mejorar las condiciones térmicas del espacio.",
+          "Funciona reflejando una parte importante de la radiaciÃ³n tÃ©rmica que recibe la cubierta. AsÃ­ reduce la transferencia de calor hacia el interior y ayuda a mejorar las condiciones tÃ©rmicas del espacio.",
         id: "faq-2",
-        question: "¿Cómo funciona Antiblaze® bajo la cubierta?",
+        question: "Â¿CÃ³mo funciona Antiblaze\u00ae bajo la cubierta?",
       },
       {
         answer:
-          "Antiblaze® actúa principalmente frente al calor radiante bajo cubierta, mientras que otros sistemas pueden enfocarse más en resistencia térmica por masa o espesor. Su valor está en controlar la ganancia térmica desde la fuente, con una solución liviana y funcional.",
+          "Antiblaze\u00ae actÃºa principalmente frente al calor radiante bajo cubierta, mientras que otros sistemas pueden enfocarse mÃ¡s en resistencia tÃ©rmica por masa o espesor. Su valor estÃ¡ en controlar la ganancia tÃ©rmica desde la fuente, con una soluciÃ³n liviana y funcional.",
         id: "faq-3",
         question:
-          "¿Qué diferencia hay entre Antiblaze® y un aislamiento tradicional?",
+          "Â¿QuÃ© diferencia hay entre Antiblaze\u00ae y un aislamiento tradicional?",
       },
       {
         answer:
-          "Sí. Ayuda a disminuir la carga térmica que entra desde la cubierta, lo que puede contribuir a mantener una temperatura interior más estable y confortable.",
+          "SÃ­. Ayuda a disminuir la carga tÃ©rmica que entra desde la cubierta, lo que puede contribuir a mantener una temperatura interior mÃ¡s estable y confortable.",
         id: "faq-4",
-        question: "¿Antiblaze® ayuda a reducir la temperatura interior?",
+        question: "Â¿Antiblaze\u00ae ayuda a reducir la temperatura interior?",
       },
       {
         answer:
-          "Sí. Al reducir la ganancia de calor desde la cubierta, puede disminuir la demanda sobre sistemas de aire acondicionado y ventilación, ayudando a optimizar el consumo energético.",
+          "SÃ­. Al reducir la ganancia de calor desde la cubierta, puede disminuir la demanda sobre sistemas de aire acondicionado y ventilaciÃ³n, ayudando a optimizar el consumo energÃ©tico.",
         id: "faq-5",
-        question: "¿Puede ayudar a disminuir el uso de aire acondicionado?",
+        question: "Â¿Puede ayudar a disminuir el uso de aire acondicionado?",
       },
       {
         answer:
-          "Puede aplicarse en distintos tipos de cubierta, incluyendo cubiertas metálicas, de fibrocemento, concreto y otras configuraciones comunes en proyectos industriales y comerciales.",
+          "Puede aplicarse en distintos tipos de cubierta, incluyendo cubiertas metÃ¡licas, de fibrocemento, concreto y otras configuraciones comunes en proyectos industriales y comerciales.",
         id: "faq-6",
-        question: "¿En qué tipos de cubierta se puede instalar?",
+        question: "Â¿En quÃ© tipos de cubierta se puede instalar?",
       },
       {
         answer:
-          "Sí. Es especialmente útil en cubiertas metálicas, donde la radiación solar puede generar una alta transferencia de calor hacia el interior.",
+          "SÃ­. Es especialmente Ãºtil en cubiertas metÃ¡licas, donde la radiaciÃ³n solar puede generar una alta transferencia de calor hacia el interior.",
         id: "faq-7",
-        question: "¿Antiblaze® sirve para cubiertas metálicas?",
+        question: "Â¿Antiblaze\u00ae sirve para cubiertas metÃ¡licas?",
       },
       {
         answer:
-          "Sí. Su aplicación puede aportar beneficios en diferentes sistemas de cubierta, siempre que se evalúe correctamente la solución según las condiciones del proyecto.",
+          "SÃ­. Su aplicaciÃ³n puede aportar beneficios en diferentes sistemas de cubierta, siempre que se evalÃºe correctamente la soluciÃ³n segÃºn las condiciones del proyecto.",
         id: "faq-8",
-        question: "¿También funciona en cubiertas de fibrocemento o concreto?",
+        question: "Â¿TambiÃ©n funciona en cubiertas de fibrocemento o concreto?",
       },
       {
         answer:
-          "Sí. Antiblaze® puede ayudar a limitar fenómenos de humedad y condensación bajo cubierta, mejorando el comportamiento general del sistema en ambientes exigentes.",
+          "SÃ­. Antiblaze\u00ae puede ayudar a limitar fenÃ³menos de humedad y condensaciÃ³n bajo cubierta, mejorando el comportamiento general del sistema en ambientes exigentes.",
         id: "faq-9",
-        question: "¿Ayuda a controlar humedad y condensación?",
+        question: "Â¿Ayuda a controlar humedad y condensaciÃ³n?",
       },
       {
         answer:
-          "Sí. Además de sus beneficios térmicos, puede aportar apoyo acústico y contribuir a mejorar el confort interior según la configuración del sistema constructivo.",
+          "SÃ­. AdemÃ¡s de sus beneficios tÃ©rmicos, puede aportar apoyo acÃºstico y contribuir a mejorar el confort interior segÃºn la configuraciÃ³n del sistema constructivo.",
         id: "faq-10",
-        question: "¿Aporta algún beneficio acústico?",
+        question: "Â¿Aporta algÃºn beneficio acÃºstico?",
       },
       {
         answer:
-          "Sí. Está pensada para responder a los requerimientos de desempeño de proyectos industriales y comerciales, con enfoque en eficiencia, seguridad y confiabilidad de instalación.",
+          "SÃ­. EstÃ¡ pensada para responder a los requerimientos de desempeÃ±o de proyectos industriales y comerciales, con enfoque en eficiencia, seguridad y confiabilidad de instalaciÃ³n.",
         id: "faq-11",
         question:
-          "¿Es una solución segura para aplicaciones industriales y comerciales?",
+          "Â¿Es una soluciÃ³n segura para aplicaciones industriales y comerciales?",
       },
       {
         answer:
-          "No. Es una solución liviana, diseñada para instalarse bajo cubierta sin agregar una carga significativa al sistema estructural.",
+          "No. Es una soluciÃ³n liviana, diseÃ±ada para instalarse bajo cubierta sin agregar una carga significativa al sistema estructural.",
         id: "faq-12",
-        question: "¿Antiblaze® agrega peso importante a la estructura?",
+        question: "Â¿Antiblaze\u00ae agrega peso importante a la estructura?",
       },
       {
         answer:
-          "Está diseñado para ofrecer desempeño sostenido a largo plazo cuando se instala correctamente y bajo condiciones adecuadas de uso.",
+          "EstÃ¡ diseÃ±ado para ofrecer desempeÃ±o sostenido a largo plazo cuando se instala correctamente y bajo condiciones adecuadas de uso.",
         id: "faq-13",
-        question: "¿Cuánto dura Antiblaze®?",
+        question: "Â¿CuÃ¡nto dura Antiblaze\u00ae?",
       },
       {
         answer:
-          "En condiciones normales, su mantenimiento es mínimo. Aun así, siempre es recomendable realizar revisiones periódicas del sistema de cubierta en conjunto con el resto de la instalación.",
+          "En condiciones normales, su mantenimiento es mÃ­nimo. Aun asÃ­, siempre es recomendable realizar revisiones periÃ³dicas del sistema de cubierta en conjunto con el resto de la instalaciÃ³n.",
         id: "faq-14",
-        question: "¿Requiere mantenimiento?",
+        question: "Â¿Requiere mantenimiento?",
       },
       {
         answer:
-          "Depende del tipo de proyecto y de las condiciones de montaje. En muchos casos, la instalación puede planificarse para minimizar afectaciones en la operación.",
+          "Depende del tipo de proyecto y de las condiciones de montaje. En muchos casos, la instalaciÃ³n puede planificarse para minimizar afectaciones en la operaciÃ³n.",
         id: "faq-15",
-        question: "¿La instalación interrumpe la operación del espacio?",
+        question: "Â¿La instalaciÃ³n interrumpe la operaciÃ³n del espacio?",
       },
       {
         answer:
-          "Sí. Puede instalarse tanto en proyectos nuevos como en cubiertas existentes, previo análisis técnico de las condiciones del sitio.",
+          "SÃ­. Puede instalarse tanto en proyectos nuevos como en cubiertas existentes, previo anÃ¡lisis tÃ©cnico de las condiciones del sitio.",
         id: "faq-16",
-        question: "¿Se puede instalar en cubiertas existentes?",
+        question: "Â¿Se puede instalar en cubiertas existentes?",
       },
       {
         answer:
-          "Se recomienda en bodegas, plantas industriales, centros logísticos, comercios, instalaciones institucionales y otros espacios donde el calor bajo cubierta afecte la operación, el confort o el consumo energético.",
+          "Se recomienda en bodegas, plantas industriales, centros logÃ­sticos, comercios, instalaciones institucionales y otros espacios donde el calor bajo cubierta afecte la operaciÃ³n, el confort o el consumo energÃ©tico.",
         id: "faq-17",
-        question: "¿En qué tipo de proyectos se recomienda Antiblaze®?",
+        question: "Â¿En quÃ© tipo de proyectos se recomienda Antiblaze\u00ae?",
       },
       {
         answer:
-          "Sí. Al reducir la transferencia de calor hacia el interior, puede contribuir a una operación más eficiente y a una menor demanda de climatización.",
+          "SÃ­. Al reducir la transferencia de calor hacia el interior, puede contribuir a una operaciÃ³n mÃ¡s eficiente y a una menor demanda de climatizaciÃ³n.",
         id: "faq-18",
-        question: "¿Antiblaze® puede ayudar a mejorar la eficiencia energética?",
+        question: "Â¿Antiblaze\u00ae puede ayudar a mejorar la eficiencia energÃ©tica?",
       },
       {
         answer:
-          "Ayuda a generar condiciones interiores más estables, lo que puede favorecer el confort del personal y contribuir a proteger equipos, inventario y procesos sensibles al calor.",
+          "Ayuda a generar condiciones interiores mÃ¡s estables, lo que puede favorecer el confort del personal y contribuir a proteger equipos, inventario y procesos sensibles al calor.",
         id: "faq-19",
         question:
-          "¿Qué beneficios ofrece para equipos, producto y personal?",
+          "Â¿QuÃ© beneficios ofrece para equipos, producto y personal?",
       },
       {
         answer:
-          "Puedes contactarnos para revisar las características de tu proyecto, evaluar el tipo de cubierta y proponerte una solución adecuada según tus necesidades.",
+          "Puedes contactarnos para revisar las caracterÃ­sticas de tu proyecto, evaluar el tipo de cubierta y proponerte una soluciÃ³n adecuada segÃºn tus necesidades.",
         id: "faq-20",
-        question: "¿Cómo puedo solicitar una evaluación o cotización?",
+        question: "Â¿CÃ³mo puedo solicitar una evaluaciÃ³n o cotizaciÃ³n?",
       },
     ] satisfies FAQItem[],
     title: "Preguntas Frecuentes",
   },
 } as const;
 
-export function FAQSection({ onNavigate }: FAQSectionProps) {
+export function FAQSection({ onNavigate, playKey }: FAQSectionProps) {
   const locale = useLocale();
+  const reduceMotion = useReducedMotion();
+  const leftCardTransition = reduceMotion
+    ? { duration: 0 }
+    : { duration: 0.82, ease: [0.22, 1, 0.36, 1] as const };
+  const rightCardTransition = reduceMotion
+    ? { duration: 0 }
+    : { duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const };
   const content = locale.startsWith("es") ? FAQ_CONTENT.es : FAQ_CONTENT.en;
   const faqItems = content.items;
   const midpoint = Math.ceil(faqItems.length / 2);
   const faqColumns = [faqItems.slice(0, midpoint), faqItems.slice(midpoint)];
-  const [openItemId, setOpenItemId] = useState<string>(faqItems[0]?.id ?? "");
+  const [openItemId, setOpenItemId] = useState<string>("");
   const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   function handleToggle(itemId: string) {
@@ -355,9 +369,39 @@ export function FAQSection({ onNavigate }: FAQSectionProps) {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-3 lg:grid-cols-2 lg:gap-4">
+          <div className="mt-8 grid gap-2 lg:grid-cols-2 lg:gap-3">
             {faqColumns.map((columnItems, columnIndex) => (
-              <div key={`faq-column-${columnIndex}`} className="space-y-3">
+              <motion.div
+                key={`faq-column-${columnIndex}-${playKey}`}
+                initial={
+                  reduceMotion || playKey === 0
+                    ? false
+                    : columnIndex === 0
+                      ? {
+                          opacity: 0,
+                          x: -180,
+                          y: 26,
+                          scale: 0.97,
+                          filter: "blur(10px)",
+                        }
+                      : {
+                          opacity: 0,
+                          x: 180,
+                          y: 26,
+                          scale: 0.97,
+                          filter: "blur(10px)",
+                        }
+                }
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  y: 0,
+                  scale: 1,
+                  filter: "blur(0px)",
+                }}
+                transition={columnIndex === 0 ? leftCardTransition : rightCardTransition}
+                className="space-y-2"
+              >
                 {columnItems.map((item, itemIndex) => {
                   const globalIndex = columnIndex * midpoint + itemIndex;
                   const isOpen = openItemId === item.id;
@@ -379,18 +423,16 @@ export function FAQSection({ onNavigate }: FAQSectionProps) {
                         aria-expanded={isOpen}
                         onClick={() => handleToggle(item.id)}
                         onKeyDown={(event) => handleKeyDown(globalIndex, event)}
-                        className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-surface-strong/52 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 sm:px-6 sm:py-5"
+                        className="flex w-full cursor-pointer items-center justify-between gap-3 px-4 py-2.5 text-left transition-colors hover:bg-surface-strong/52 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 sm:px-5 sm:py-3"
                       >
-                        <span className="text-[1rem] font-semibold leading-7 tracking-[-0.02em] text-foreground sm:text-[1.04rem]">
+                        <span className="text-[0.96rem] font-semibold leading-6 tracking-[-0.02em] text-foreground sm:text-[1rem]">
                           {item.question}
                         </span>
                         <span
-                          className={cn(
-                            "flex size-10 shrink-0 items-center justify-center rounded-full border border-border/70 bg-white/84 text-primary/72 transition-all duration-300",
-                            isOpen ? "rotate-180 bg-primary/6" : "",
-                          )}
+                          aria-hidden
+                          className="inline-flex shrink-0 items-center justify-center text-[1.35rem] font-semibold leading-none text-primary/78"
                         >
-                          <ChevronDown className="size-4" aria-hidden />
+                          {isOpen ? "-" : "+"}
                         </span>
                       </button>
 
@@ -405,7 +447,7 @@ export function FAQSection({ onNavigate }: FAQSectionProps) {
                             id={panelId}
                             role="region"
                             aria-labelledby={triggerId}
-                            className="border-t border-border/60 px-5 pb-5 pt-4 sm:px-6 sm:pb-6"
+                            className="border-t border-border/60 px-4 pb-4 pt-3 sm:px-5 sm:pb-5"
                           >
                             <p className="max-w-[58rem] text-[0.94rem] leading-7 text-foreground/72">
                               {item.answer}
@@ -416,7 +458,7 @@ export function FAQSection({ onNavigate }: FAQSectionProps) {
                     </div>
                   );
                 })}
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -438,3 +480,4 @@ export function FAQSection({ onNavigate }: FAQSectionProps) {
     </SnapSection>
   );
 }
+
